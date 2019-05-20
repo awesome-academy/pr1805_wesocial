@@ -1,7 +1,8 @@
 class User < ApplicationRecord
+  # :confirmable, :lockable, :timeoutable, :trackable, 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, 
-         :confirmable, :lockable, :timeoutable, :trackable, :omniauthable
+         :omniauthable
 
   has_many :friend_requester, class_name: Friendship.name, 
     foreign_key: "sender_id", dependent: :destroy
