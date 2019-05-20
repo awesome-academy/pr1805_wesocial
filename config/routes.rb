@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  root "static_pages#home"
-  devise_for :users, controllers: {
-    sessions: "users/sessions",
-    passwords: "users/passwords",
-    registrations: "users/registrations"
-  }
+  devise_for :users, only: :omniauth_callbacks,
+    controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
 
-  resources :users, only: :show
+  scope '/(:locale)', locale: /en|vi/ do
+    devise_for :users, skip: :omniauth_callbacks , controllers: {
+      sessions: "users/sessions",
+      passwords: "users/passwords",
+      registrations: "users/registrations"
+    }
+  end
+
+  scope "(:locale)", locale: /en|vi/ do
+    root "static_pages#home"
+    resources :users, only: [:show, :edit]
+    resources :groups
+  end
 end

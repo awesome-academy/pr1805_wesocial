@@ -1,33 +1,46 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  # _header.html.erb
+
+  search_holder: Search people or group...
+  find_friends: Find
+  friend_requests: Friend requests
+  check_all_events: Check all events
+  chat_messages: Messages
+  mark_all_as_read: Mark all as read
+  view_all_messages: View all messages
+  notifications: Notifications
+  view_all_notifications: View all notifications
+  your_account: Your account
+  profile_settings: Profile settings
+  create_group: Create group
+  logout: Log out
+  settings: Settings
+  language: Language
+  english: English
+  vietnamese: Vietnamese
+  your_email: Email
+  your_website: Website
+  your_phone: Phone number
+  facebook_account: Facebook
+  twitter_account: Twitter
+  your_profile: Your profile
+  personal_info: Personal infomation
+  account_setting: Account settings
+  change_password: Change password
+
+  # ==============Group new==============
+  your_group_dashboard: Group dashboard
+  favorite_group_info: Group infomation
+  since: Since
+  your_country: Country
+  your_city: City
+  group_disciption: Group discription
+  additional_info: Additional infomation
+  del_all_atbs: Delete all attributes
+  create_group: Create new group
+  group_setting: Group settings
+  hobbies: Hobbies
+  education: Education
+  static_pages:
+    home:
+      status: Status

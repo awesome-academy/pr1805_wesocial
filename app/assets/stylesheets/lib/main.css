@@ -6825,31 +6825,31 @@ fieldset[disabled] .checkbox input[type=checkbox],
 }
 
 .bg-account {
-    background-image: url("../img/top-header3.png");
+    background-image: url("/assets/top-header3.png");
 }
 
 .bg-birthday {
-    background-image: url("../img/top-header6.png");
+    background-image: url("/assets/top-header6.png");
 }
 
 .bg-badges {
-    background-image: url("../img/top-header4.png");
+    background-image: url("/assets/top-header4.png");
 }
 
 .bg-events {
-    background-image: url("../img/top-header5.png");
+    background-image: url("/assets/top-header5.png");
 }
 
 .bg-weather {
-    background-image: url("../img/top-header6.png");
+    background-image: url("/assets/top-header6.png");
 }
 
 .bg-group {
-    background-image: url("../img/bg-group.png");
+    background-image: url("/assets/bg-group.png");
 }
 
 .bg-music {
-    background-image: url("../img/top-header7.png");
+    background-image: url("/assets/top-header7.png");
 }
 
 .bg-landing {

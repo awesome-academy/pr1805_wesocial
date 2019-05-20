@@ -1,12 +1,12 @@
-<!-- Header-BP -->
+!<!-- Header-BP -->
 <header class="header" id="site-header">
   <div class="page-title">
-    <h6>Newsfeed</h6>
+    <h6><%= yield :title %></h6>
   </div>
   <div class="header-content-wrapper">
     <form class="search-bar w-search notification-list friend-requests">
       <div class="form-group with-button">
-        <input class="form-control js-user-search" placeholder="Search here people or pages..." type="text">
+        <input class="form-control js-user-search" placeholder="<%= I18n.t ".search_holder" %>" type="text">
         <button>
           <svg class="olymp-magnifying-glass-icon">
             <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use>
@@ -14,7 +14,7 @@
         </button>
       </div>
     </form>
-    <a href="#" class="link-find-friend">Find Friends</a>
+    <a href="#" class="link-find-friend"><%= I18n.t ".find_friends" %></a>
     <div class="control-block">
       <div class="control-icon more has-items">
         <svg class="olymp-happy-face-icon">
@@ -23,9 +23,9 @@
         <div class="label-avatar bg-blue">6</div>
         <div class="more-dropdown more-with-triangle triangle-top-center">
           <div class="ui-block-title ui-block-title-small">
-            <h6 class="title">FRIEND REQUESTS</h6>
-            <a href="#">Find Friends</a>
-            <a href="#">Settings</a>
+            <h6 class="title"><%= I18n.t ".friend_requests" %></h6>
+            <a href="#"><%= I18n.t ".find_friends" %></a>
+            <a href="#"><%= I18n.t ".settings" %></a>
           </div>
           <div class="mCustomScrollbar" data-mcs-theme="dark">
             <ul class="notification-list friend-requests">
@@ -142,7 +142,7 @@
               </li>
             </ul>
           </div>
-          <a href="#" class="view-all bg-blue">Check all your Events</a>
+          <a href="#" class="view-all bg-blue"><%= I18n.t ".check_all_events" %></a>
         </div>
       </div>
       <div class="control-icon more has-items">
@@ -152,9 +152,9 @@
         <div class="label-avatar bg-purple">2</div>
         <div class="more-dropdown more-with-triangle triangle-top-center">
           <div class="ui-block-title ui-block-title-small">
-            <h6 class="title">Chat / Messages</h6>
-            <a href="#">Mark all as read</a>
-            <a href="#">Settings</a>
+            <h6 class="title"><%= I18n.t ".chat_messages" %></h6>
+            <a href="#"><%= I18n.t ".mark_all_as_read" %></a>
+            <a href="#"><%= I18n.t ".settings" %></a>
           </div>
           <div class="mCustomScrollbar" data-mcs-theme="dark">
             <ul class="notification-list chat-message">
@@ -245,7 +245,7 @@
               </li>
             </ul>
           </div>
-          <a href="#" class="view-all bg-purple">View All Messages</a>
+          <a href="#" class="view-all bg-purple"><%= I18n.t ".view_all_messages" %></a>
         </div>
       </div>
       <div class="control-icon more has-items">
@@ -255,9 +255,9 @@
         <div class="label-avatar bg-primary">8</div>
         <div class="more-dropdown more-with-triangle triangle-top-center">
           <div class="ui-block-title ui-block-title-small">
-            <h6 class="title">Notifications</h6>
-            <a href="#">Mark all as read</a>
-            <a href="#">Settings</a>
+            <h6 class="title"><%= I18n.t ".notifications" %></h6>
+            <a href="#"><%= I18n.t ".mark_all_as_read" %></a>
+            <a href="#"><%= I18n.t ".settings" %></a>
           </div>
           <div class="mCustomScrollbar" data-mcs-theme="dark">
             <ul class="notification-list">
@@ -377,7 +377,7 @@
               </li>
             </ul>
           </div>
-          <a href="#" class="view-all bg-primary">View All Notifications</a>
+          <a href="#" class="view-all bg-primary"><%= I18n.t ".view_all_notifications" %></a>
         </div>
       </div>
       <div class="author-page author vcard inline-items more">
@@ -387,7 +387,7 @@
           <div class="more-dropdown more-with-triangle">
             <div class="mCustomScrollbar" data-mcs-theme="dark">
               <div class="ui-block-title ui-block-title-small">
-                <h6 class="title">Your Account</h6>
+                <h6 class="title"><%= I18n.t ".your_account" %></h6>
               </div>
               <ul class="account-settings">
                 <li>
@@ -395,7 +395,7 @@
                     <svg class="olymp-menu-icon">
                       <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-menu-icon"></use>
                     </svg>
-                    <span>Profile Settings</span>
+                    <span><%= I18n.t ".profile_settings" %></span>
                   </a>
                 </li>
                 <li>
@@ -403,7 +403,7 @@
                     <svg class="olymp-star-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FAV PAGE">
                       <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-star-icon"></use>
                     </svg>
-                    <span>Create Fav Page</span>
+                    <span><%= I18n.t ".create_group" %></span>
                   </a>
                 </li>
                 <li>
@@ -411,73 +411,29 @@
                     <svg class="olymp-logout-icon">
                       <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-logout-icon"></use>
                     </svg>
-                    <span>Đăng xuất</span>
+                    <span><%= I18n.t ".logout" %></span>
                   <% end %>
                 </li>
               </ul>
               <div class="ui-block-title ui-block-title-small">
-                <h6 class="title">Chat Settings</h6>
-              </div>
-              <ul class="chat-settings">
-                <li>
-                  <a href="#">
-                    <span class="icon-status online"></span>
-                    <span>Online</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="icon-status away"></span>
-                    <span>Away</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="icon-status disconected"></span>
-                    <span>Disconnected</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="icon-status status-invisible"></span>
-                    <span>Invisible</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="ui-block-title ui-block-title-small">
-                <h6 class="title">Custom Status</h6>
-              </div>
-              <form class="form-group with-button custom-status">
-                <input class="form-control" placeholder="" type="text" value="Space Cowboy">
-                <button class="bg-purple">
-                  <svg class="olymp-check-icon">
-                    <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-check-icon"></use>
-                  </svg>
-                </button>
-              </form>
-              <div class="ui-block-title ui-block-title-small">
-                <h6 class="title">About Olympus</h6>
+                <h6 class="title"><%= I18n.t ".language" %></h6>
               </div>
               <ul>
                 <li>
-                  <a href="#">
-                    <span>Terms and Conditions</span>
-                  </a>
+                  <%= link_to locale:"en" do %>
+                    <svg class="olymp-star-icon left-menu-icon mr-3" data-toggle="tooltip" data-placement="right" data-original-title="FAV PAGE">
+                      <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-star-icon"></use>
+                    </svg>
+                    <span> <%= (I18n.t ".english") %></span>
+                  <% end %>
                 </li>
                 <li>
-                  <a href="#">
-                    <span>FAQs</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>Careers</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>Contact</span>
-                  </a>
+                  <%= link_to locale:"vi" do %>
+                    <svg class="olymp-star-icon left-menu-icon mr-3" data-toggle="tooltip" data-placement="right" data-original-title="FAV PAGE">
+                      <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-star-icon"></use>
+                    </svg>
+                    <span> <%= (I18n.t ".vietnamese") %></span>
+                  <% end %>
                 </li>
               </ul>
             </div>
@@ -547,9 +503,9 @@
     <div class="tab-pane " id="request" role="tabpanel">
       <div class="mCustomScrollbar" data-mcs-theme="dark">
         <div class="ui-block-title ui-block-title-small">
-          <h6 class="title">FRIEND REQUESTS</h6>
-          <a href="#">Find Friends</a>
-          <a href="#">Settings</a>
+          <h6 class="title"><%= I18n.t ".friend_requests" %></h6>
+          <a href="#"><%= I18n.t ".find_friends" %></a>
+          <a href="#"><%= I18n.t ".settings" %></a>
         </div>
         <ul class="notification-list friend-requests">
           <li>
@@ -664,15 +620,15 @@
             </div>
           </li>
         </ul>
-        <a href="#" class="view-all bg-blue">Check all your Events</a>
+        <a href="#" class="view-all bg-blue"><%= I18n.t "check_all_events" %></a>
       </div>
     </div>
     <div class="tab-pane " id="chat" role="tabpanel">
       <div class="mCustomScrollbar" data-mcs-theme="dark">
         <div class="ui-block-title ui-block-title-small">
-          <h6 class="title">Chat / Messages</h6>
-          <a href="#">Mark all as read</a>
-          <a href="#">Settings</a>
+          <h6 class="title"><%= I18n.t ".chat_messages" %></h6>
+          <a href="#"><%= I18n.t ".mark_all_as_read" %></a>
+          <a href="#"><%= I18n.t ".settings" %></a>
         </div>
         <ul class="notification-list chat-message">
           <li class="message-unread">
@@ -760,15 +716,15 @@
             </div>
           </li>
         </ul>
-        <a href="#" class="view-all bg-purple">View All Messages</a>
+        <a href="#" class="view-all bg-purple"><%= I18n.t ".mark_all_as_read" %></a>
       </div>
     </div>
     <div class="tab-pane " id="notification" role="tabpanel">
       <div class="mCustomScrollbar" data-mcs-theme="dark">
         <div class="ui-block-title ui-block-title-small">
-          <h6 class="title">Notifications</h6>
-          <a href="#">Mark all as read</a>
-          <a href="#">Settings</a>
+          <h6 class="title"><%= I18n.t ".notifications" %></h6>
+          <a href="#"><%= I18n.t ".mark_all_as_read" %></a>
+          <a href="#"><%= I18n.t ".settings" %></a>
         </div>
         <ul class="notification-list">
           <li>
@@ -886,13 +842,13 @@
             </div>
           </li>
         </ul>
-        <a href="#" class="view-all bg-primary">View All Notifications</a>
+        <a href="#" class="view-all bg-primary"><%= I18n.t ".view_all_notifications" %></a>
       </div>
     </div>
     <div class="tab-pane " id="search" role="tabpanel">
       <form class="search-bar w-search notification-list friend-requests">
         <div class="form-group with-button">
-          <input class="form-control js-user-search" placeholder="Search here people or pages..." type="text">
+          <input class="form-control js-user-search" placeholder= <%= t 'search_holder' %> type="text">
         </div>
       </form>
     </div>
