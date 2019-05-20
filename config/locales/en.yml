@@ -23,6 +23,7 @@ en:
   your_phone: Phone number
   facebook_account: Facebook
   twitter_account: Twitter
+  instagram_account: Instagram
   your_profile: Your profile
   personal_info: Personal infomation
   account_setting: Account settings
@@ -30,17 +31,29 @@ en:
 
   # ==============Group new==============
   your_group_dashboard: Group dashboard
-  favorite_group_info: Group infomation
+  favourite_group_info: Group infomation
   since: Since
   your_country: Country
   your_city: City
-  group_disciption: Group discription
+  group_description: Group description
+  address: Address
+  favourites: Favourites
   additional_info: Additional infomation
   del_all_atbs: Delete all attributes
   create_group: Create new group
   group_setting: Group settings
   hobbies: Hobbies
   education: Education
+  timeline: Timeline
+  about: About
+  photos: Photos
+  videos: Videos
+  group_name: Group Name
+  statistics: Statistics
+  private_group: Private Group
+  public_group: Public Group
+  members: Members
+  create_group_success: Create group successfully!
   static_pages:
     home:
       status: Status

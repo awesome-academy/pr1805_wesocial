@@ -32,105 +32,112 @@
     <div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
       <div class="ui-block">
         <div class="ui-block-title">
-          <h6 class="title"><%= I18n.t "favorite_group_info" %></h6>
+          <h6 class="title"><%= I18n.t "favourite_group_info" %></h6>
         </div>
         <div class="ui-block-content">
 
 
           <!-- Form Favorite Page Information -->
 
-          <form>
+          <%= form_for @group do |f| %>
             <div class="row">
               <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="form-group label-floating">
-                  <label class="control-label">First Name</label>
-                  <input class="form-control" placeholder="" type="text" value="Green Goo">
+                  <%= f.label :name, I18n.t("group_name"), class: "control-label" %>
+                  <%= f.text_field :name, autofocus: true, autocomplete: "name",
+                    class: "form-control", placeholder: "" %>
                 </div>
 
                 <div class="form-group label-floating">
-                  <label class="control-label"><%= I18n.t "your_email" %></label>
-                  <input class="form-control" placeholder="" type="email" value="greengoo_gigs@yourmail.com">
-                </div>
-
-                <div class="form-group date-time-picker label-floating">
-                  <label class="control-label"><%= I18n.t "since" %></label>
-                  <input name="datetimepicker" value="10/24/1984" />
-                  <span class="input-group-addon">
-                              <svg class="olymp-calendar-icon icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
-                            </span>
-                </div>
-              </div>
-
-              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="form-group label-floating">
-                  <label class="control-label">Last Name</label>
-                  <input class="form-control" placeholder="" type="text" value="Rock">
+                  <%= f.label :phone, I18n.t("your_phone"),
+                    class: "control-label" %>
+                  <%= f.number_field :phone, autofocus: true,
+                    autocomplete: "phone", class: "form-control",
+                    placeholder: "" %>
                 </div>
 
                 <div class="form-group label-floating">
-                  <label class="control-label"><%= I18n.t "your_website" %></label>
-                  <input class="form-control" placeholder="" type="email" value="www.ggrock.com">
-                </div>
-
-
-                <div class="form-group label-floating">
-                  <label class="control-label"><%= I18n.t "your_phone" %></label>
-                  <input class="form-control" placeholder="" type="text">
-                </div>
-              </div>
-
-              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="form-group label-floating is-select">
-                  <label class="control-label"><%= I18n.t "your_country" %></label>
-                  <select class="selectpicker form-control">
-                    <option value="US">United States</option>
-                    <option value="AU">Australia</option>
-                  </select>
+                  <%= f.label :description, I18n.t("group_description"),
+                    class: "control-label" %>
+                  <%= f.text_area :description, autofocus: true,
+                    autocomplete: "description", class: "form-control",
+                    placeholder: "" %>
                 </div>
               </div>
               <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="form-group label-floating is-select">
-                  <label class="control-label"><%= I18n.t "your_city" %></label>
-                  <select class="selectpicker form-control">
-                    <option value="SF">San Francisco</option>
-                    <option value="NY">New York</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="form-group label-floating">
-                  <label class="control-label"><%= I18n.t "group_disciption" %></label>
-                  <textarea class="form-control" placeholder="">We are Rock Band from Los Angeles, now based in San Francisco, come and listen to us play!</textarea>
-                </div>
-              </div>
 
-              <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="form-group label-floating">
-                  <label class="control-label"><%= I18n.t "additional_info" %></label>
-                  <textarea class="form-control" placeholder="" >We are open for gigs all over the country. If you are interested, please contact us via our website or send us an email to gigs@ggrock.com</textarea>
+                  <%= f.label :email, I18n.t("your_email"),
+                    class: "control-label" %>
+                  <%= f.email_field :email, autofocus: true,
+                    autocomplete: "email", class: "form-control",
+                    placeholder: "" %>
+                </div>
+
+                <div class="form-group label-floating">
+                  <%= f.label :website, I18n.t("your_website"),
+                    class: "control-label" %>
+                  <%= f.text_field :website, autofocus: true,
+                    autocomplete: "website", class: "form-control",
+                    placeholder: "" %>
+                </div>
+
+                <div class="form-group label-floating">
+                  <%= f.label :address, I18n.t("address"),
+                    class: "control-label" %>
+                  <%= f.text_area :address, autofocus: true,
+                    autocomplete: "address", class: "form-control",
+                    placeholder: "" %>
                 </div>
               </div>
-
               <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="form-group with-icon label-floating">
-                  <label class="control-label"><%= I18n.t "facebook_account" %></label>
-                  <input class="form-control" type="text" value="www.facebook.com/greengoo_rock">
+                  <%= f.label :facebook, I18n.t("facebook_account"),
+                    class: "control-label" %>
+                  <%= f.text_field :facebook, autofocus: true,
+                    autocomplete: "facebook", class: "form-control",
+                    placeholder: "" %>
                   <i class="fab fa-facebook-f c-facebook" aria-hidden="true"></i>
                 </div>
                 <div class="form-group with-icon label-floating">
-                  <label class="control-label"><%= I18n.t "twitter_account" %></label>
-                  <input class="form-control" type="text" value="www.twitter.com/greengoo_rock">
+                  <%= f.label :twitter, I18n.t("twitter_account"),
+                    class: "control-label" %>
+                  <%= f.text_field :twitter, autofocus: true,
+                    autocomplete: "twitter", class: "form-control",
+                    placeholder: "" %>
                   <i class="fab fa-twitter c-twitter" aria-hidden="true"></i>
                 </div>
+                <div class="form-group with-icon label-floating">
+                  <%= f.label :instagram, I18n.t("instagram_account"),
+                    class: "control-label" %>
+                  <%= f.text_field :instagram, autofocus: true,
+                    autocomplete: "instagram", class: "form-control",
+                    placeholder: "" %>
+                  <i class="fab fa-instagram c-instagram" aria-hidden="true"></i>
+                </div>
               </div>
-              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-                <a href="#" class="btn btn-secondary btn-lg full-width"><%= I18n.t "del_all_atbs" %></a>
+              <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="description-toggle">
+                  <div class="description-toggle-content">
+                    <div class="h6">Group private</div>
+                    <p>
+                      Turn on to make your group private, people can't search
+                      it by search engine
+                    </p>
+                  </div>
+                  <div class="togglebutton">
+                    <label>
+                      <%= f.check_box :privacy %>
+                    </label>
+                  </div>
+                </div>
               </div>
-              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-                <a href="#" class="btn btn-primary btn-lg full-width"><%= I18n.t "create_group" %></a>
+              <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                <%= f.submit I18n.t("create_group"),
+                  class: "btn btn-primary btn-lg full-width" %>
               </div>
             </div>
-          </form>
+          <% end %>
 
           <!-- ... end Form Favorite Page Information -->
         </div>

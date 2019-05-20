@@ -398,12 +398,12 @@
                   </a>
                 </li>
                 <li>
-                  <a href="36-FavPage-SettingsAndCreatePopup.html">
+                  <%= link_to new_group_path do %>
                     <svg class="olymp-star-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FAV PAGE">
                       <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-star-icon"></use>
                     </svg>
                     <span><%= I18n.t ".create_group" %></span>
-                  </a>
+                  <% end %>
                 </li>
                 <li>
                   <%= link_to destroy_user_session_path, method: :delete do %>

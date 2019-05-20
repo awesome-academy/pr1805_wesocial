@@ -9,11 +9,18 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new group_params
+    if  @group.save
+      flash[:success] = "#{I18n.t "create_group_success"}"
+      redirect_to group_path @group
+    else
+      render :new
+    end
   end
 
   private
 
-  # def group_params
-  #   params.require(:group).permit 
-  # end
+  def group_params
+    params.require(:group).permit :name, :description, :privacy, :address, 
+    :cover, :email, :website, :phone, :facebook, :twitter, :instagram
+  end
 end
