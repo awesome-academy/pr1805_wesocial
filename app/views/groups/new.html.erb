@@ -1,0 +1,159 @@
+<% provide :title, "your account" %>
+<body class="page-has-left-panels page-has-right-panels">
+
+<!-- Header-BP -->
+<%= render "shared/header" %>
+<!-- ... end Responsive Header-BP -->
+
+<div class="header-spacer header-spacer-small"></div>
+
+<!-- Main Header Account -->
+
+<div class="main-header">
+  <div class="content-bg-wrap bg-account"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+        <div class="main-header-content">
+          <h1><%= I18n.t "create_group" %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= image_tag("forums-bottom.png", class: "img-bottom", alt: "friends") %>
+</div>
+
+<!-- ... end Main Header Account -->
+
+<!-- Your Account Personal Information -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title"><%= I18n.t "favorite_group_info" %></h6>
+        </div>
+        <div class="ui-block-content">
+
+
+          <!-- Form Favorite Page Information -->
+
+          <form>
+            <div class="row">
+              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group label-floating">
+                  <label class="control-label">First Name</label>
+                  <input class="form-control" placeholder="" type="text" value="Green Goo">
+                </div>
+
+                <div class="form-group label-floating">
+                  <label class="control-label"><%= I18n.t "your_email" %></label>
+                  <input class="form-control" placeholder="" type="email" value="greengoo_gigs@yourmail.com">
+                </div>
+
+                <div class="form-group date-time-picker label-floating">
+                  <label class="control-label"><%= I18n.t "since" %></label>
+                  <input name="datetimepicker" value="10/24/1984" />
+                  <span class="input-group-addon">
+                              <svg class="olymp-calendar-icon icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+                            </span>
+                </div>
+              </div>
+
+              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group label-floating">
+                  <label class="control-label">Last Name</label>
+                  <input class="form-control" placeholder="" type="text" value="Rock">
+                </div>
+
+                <div class="form-group label-floating">
+                  <label class="control-label"><%= I18n.t "your_website" %></label>
+                  <input class="form-control" placeholder="" type="email" value="www.ggrock.com">
+                </div>
+
+
+                <div class="form-group label-floating">
+                  <label class="control-label"><%= I18n.t "your_phone" %></label>
+                  <input class="form-control" placeholder="" type="text">
+                </div>
+              </div>
+
+              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group label-floating is-select">
+                  <label class="control-label"><%= I18n.t "your_country" %></label>
+                  <select class="selectpicker form-control">
+                    <option value="US">United States</option>
+                    <option value="AU">Australia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group label-floating is-select">
+                  <label class="control-label"><%= I18n.t "your_city" %></label>
+                  <select class="selectpicker form-control">
+                    <option value="SF">San Francisco</option>
+                    <option value="NY">New York</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group label-floating">
+                  <label class="control-label"><%= I18n.t "group_disciption" %></label>
+                  <textarea class="form-control" placeholder="">We are Rock Band from Los Angeles, now based in San Francisco, come and listen to us play!</textarea>
+                </div>
+              </div>
+
+              <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="form-group label-floating">
+                  <label class="control-label"><%= I18n.t "additional_info" %></label>
+                  <textarea class="form-control" placeholder="" >We are open for gigs all over the country. If you are interested, please contact us via our website or send us an email to gigs@ggrock.com</textarea>
+                </div>
+              </div>
+
+              <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="form-group with-icon label-floating">
+                  <label class="control-label"><%= I18n.t "facebook_account" %></label>
+                  <input class="form-control" type="text" value="www.facebook.com/greengoo_rock">
+                  <i class="fab fa-facebook-f c-facebook" aria-hidden="true"></i>
+                </div>
+                <div class="form-group with-icon label-floating">
+                  <label class="control-label"><%= I18n.t "twitter_account" %></label>
+                  <input class="form-control" type="text" value="www.twitter.com/greengoo_rock">
+                  <i class="fab fa-twitter c-twitter" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <a href="#" class="btn btn-secondary btn-lg full-width"><%= I18n.t "del_all_atbs" %></a>
+              </div>
+              <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <a href="#" class="btn btn-primary btn-lg full-width"><%= I18n.t "create_group" %></a>
+              </div>
+            </div>
+          </form>
+
+          <!-- ... end Form Favorite Page Information -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12 responsive-display-none">
+      <div class="ui-block">
+
+        <!-- Your Profile  -->
+        <%= render "shared/your_profile" %>
+        <!-- ... end Your Profile  -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ... end Your Account Personal Information -->
+
+<!-- Window-popup-CHAT for responsive min-width: 768px -->
+<%= render "shared/popup_chat" %>
+<!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
+
+<%= render "shared/back_to_top" %>
+</body>
