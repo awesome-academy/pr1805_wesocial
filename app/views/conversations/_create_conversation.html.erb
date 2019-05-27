@@ -1,0 +1,10 @@
+<%= form_for @conversation_ do |f|%>
+  <%= f.hidden_field :origin_conversation, value: @conversation.id %>
+  <%= f.hidden_field :conversation_type, value: "2" %>
+  <div class="field">
+    <%= f.fields_for :conversation_users do |ff| %>
+        <%= ff.collection_select(:user_id, @users, :id, :name, {}, {:multiple => true, class: "ui fluid  selection dropdown", id: "myMulti-" + @conversation.id.to_s}) %>
+    <% end %>
+  </div>
+  <%= f.submit "Done" , class: "create-gr-chat-btn", id: "new_conversation", data: {wait: 'Please wait...', disable_with: false} %>
+<%end%>

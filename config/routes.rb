@@ -20,5 +20,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
       get 'user_posts/user_post_id/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
     end
+    resources :conversations do
+      resources :messages
+    end
   end
 end

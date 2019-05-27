@@ -1,0 +1,10 @@
+
+<% publish_to conversation_path(@conversation) do %>
+  debugger
+  var conversation_id = <%= @conversation.id %>;
+  chatWith(conversation_id);
+  var chatbox = $("#chatbox_" + conversation_id + " .media-list");
+  chatbox.append("<%= j render(@message) %>");
+
+  $("#chatbox_" + conversation_id+ " .chatboxcontent").scrollTop(9999999);
+<% end %>

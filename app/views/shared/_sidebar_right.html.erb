@@ -5,76 +5,20 @@
 
     <div class="mCustomScrollbar" data-mcs-theme="dark">
       <ul class="chat-users">
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("/assets/avatar67-sm.jpg", alt: "author") %>
-            <span class="icon-status online"></span>
-          </div>
-        </li>
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("/assets/avatar67-sm.jpg", alt: "author") %>
-            <span class="icon-status online"></span>
-          </div>
-        </li>
-
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("avatar67-sm.jpg", class: "avatar", alt: "authour") %>
-            <span class="icon-status online"></span>
-          </div>
-        </li>
-
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("avatar67-sm.jpg", class: "avatar", alt: "authour") %>
-            <span class="icon-status away"></span>
-          </div>
-        </li>
-
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("/assets/avatar67-sm.jpg", class: "avatar", alt: "authour") %>
-            <span class="icon-status disconected"></span>
-          </div>
-        </li>
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("avatar67-sm.jpg", class: "avatar", alt: "authour") %>
-            <span class="icon-status online"></span>
-          </div>
-        </li>
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("/assets/avatar67-sm.jpg", class: "avatar", alt: "authour") %>
-            <span class="icon-status online"></span>
-          </div>
-        </li>
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("/assets/avatar67-sm.jpg", class: "avatar", alt: "authour") %>
-            <span class="icon-status away"></span>
-          </div>
-        </li>
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("avatar67-sm.jpg", class: "avatar", alt: "authour") %>
-            <span class="icon-status status-invisible"></span>
-          </div>
-        </li>
-        <li class="inline-items js-chat-open">
-          <div class="author-thumb">
-            <%= image_tag("/assets/avatar67-sm.jpg", class: "avatar", alt: "authour") %>
-            <span class="icon-status away"></span>
-          </div>
-        </li>
-        <li class="inline-items js-chat-open">
-
-          <div class="author-thumb">
-            <%= image_tag("/assets/avatar67-sm.jpg", class: "avatar", alt: "authour") %>
-            <span class="icon-status online"></span>
-          </div>
-        </li>
+        <% @users.each_with_index do |user, index| %>
+          <li class="inline-items">
+                <div class="author-thumb">
+                  <%= link_to (image_tag "/assets/avatar67-sm.jpg", class: "media-object"), "#", class: "btn btn-success start-conversation", "data-sid" => current_user.id, "data-rid" => user.id %>
+                </div>
+          </li>
+        <% end %>
+        <% @conversations.each do |conversation| %>
+          <li class="inline-items">
+                <div class="author-thumb">
+                  <%= link_to (image_tag "/assets/avatar41-sm.jpg", class: "media-object"), "#", class: "btn btn-success start-by-conversation", "data-cid" => conversation.id %>
+                </div>
+          </li>
+        <% end %>
       </ul>
     </div>
 

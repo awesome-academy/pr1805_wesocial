@@ -19,7 +19,8 @@ gem "carrierwave"
 gem "cloudinary"
 gem "rails_autolink", "~> 1.1", ">= 1.1.6"
 gem "acts_as_votable"
-
+gem 'private_pub'
+gem 'thin'
 
 
 

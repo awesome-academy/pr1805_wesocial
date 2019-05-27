@@ -47,6 +47,19 @@ ActiveRecord::Schema.define(version: 2019_06_17_134102) do
     t.integer "parent_id"
   end
 
+  create_table "conversation_users", force: :cascade do |t|
+    t.integer "conversation_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "conversation_type"
+  end
+
   create_table "friendships", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "receiver_id"
@@ -110,17 +123,9 @@ ActiveRecord::Schema.define(version: 2019_06_17_134102) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "conversation_id"
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "scrapes", force: :cascade do |t|
-    t.string "url"
-    t.string "title"
-    t.text "description"
-    t.text "images"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "user_posts", force: :cascade do |t|

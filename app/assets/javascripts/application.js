@@ -48,12 +48,14 @@
 //= require ./lib/base-init
 //= require ./lib/fontawesome-all
 //= require ./lib/bootstrap.bundle
-
+//= require ./dropdown1
 //= require rails-ujs
+//= require private_pub
 //= require activestorage
 //= require cloudinary
 
 //= require_tree .
+
 
 $(document).ready(function() {
   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -61,7 +63,6 @@ $(document).ready(function() {
       $('.nav a').filter('a[href="#'+target[1]+'"]').tab('show');
   })
 })
-
 
 $(document).on("click", ".upload-photo-item", function() {
 	$("#user_post_file").trigger("click");
@@ -91,4 +92,8 @@ $(document).ready(function() {
     }
   });
 });
- 
+
+$(document).on('turbolinks:load', function() {
+  $('.ui.dropdown').dropdown();
+  $('select').selectpicker();
+});

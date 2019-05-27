@@ -1,0 +1,14 @@
+<li class="media">
+  <div class="media-left">
+    <%= image_tag "http://placehold.it/40x40", class: "media-object" %>
+  </div>
+  <div class="media-body">
+    <h5 class="media-heading">
+      <b><%= message.user.name %></b>
+    </h5>
+    <p><%= message.content %></p>
+    <time datetime="<%= message.created_at %>" title="<%= message.created_at %>">
+      <i><%= message.created_at.strftime "%H:%M %p"%></i>
+    </time>
+  </div>
+</li>
