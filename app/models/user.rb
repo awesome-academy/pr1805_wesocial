@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-  # :confirmable, :lockable, :timeoutable, :trackable,
+  # :lockable, :timeoutable, :trackable,
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+         :omniauthable, :confirmable,
+         omniauth_providers: [:facebook, :google_oauth2]
 
   has_many :friend_requester, class_name: Friendship.name,
     foreign_key: "sender_id", dependent: :destroy
