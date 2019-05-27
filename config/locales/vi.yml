@@ -23,24 +23,38 @@ vi:
   your_phone: Số điện thoại
   facebook_account: Facebook
   twitter_account: Twitter
+  instagram_account: Instagram
   your_profile: Cá nhân
   personal_info: Thông tin cá nhân
   account_setting: Thiết lập tài khoản
   change_password: Thay đổi mật khẩu
 
+
   # ==============Group new==============
   your_group_dashboard: Thống kê nhóm
-  favorite_group_info: Thông tin nhóm
+  favourite_group_info: Thông tin nhóm
   since: Thành lập
   your_country: Quốc gia
   your_city: Thành phố
-  group_disciption: Mô tả
+  group_description: Mô tả
+  address: Địa chỉ
+  favourites: Lượt thích
   additional_info: Liên hệ
   del_all_atbs: Xóa các mục
   create_group: Tạo nhóm mới
   group_setting: Thiết lập của nhóm
+  group_name: Tên nhóm
   hobbies: Sở thích
   education: Học vấn
+  timeline: Dòng thời gian
+  about: Giới thiệu
+  photos: Ảnh
+  videos: Video
+  statistics: Thống kê
+  private_group: Nhóm Kín
+  public_group: Nhóm Công khai
+  members: Thành viên
+  create_group_success: Tạo nhóm thành công!
   static_pages:
     home:
       status: Trạng thái

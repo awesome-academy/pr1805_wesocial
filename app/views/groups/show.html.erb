@@ -5,67 +5,7 @@
 <!-- ... end Responsive Header-BP -->
 <div class="header-spacer"></div>
 
-<div class="container">
-  <div class="row">
-    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <div class="ui-block">
-        <div class="top-header top-header-favorit">
-          <div class="top-header-thumb">
-            <%= image_tag("top-header2.jpg", alt: "nature") %>
-            <div class="top-header-author">
-              <div class="author-thumb">
-                <%= image_tag("author-main1.jpg", alt: "author") %>
-              </div>
-              <div class="author-content">
-                <a href="#" class="h3 author-name">Green Goo Rock</a>
-                <div class="country">Rock Band  |  San Francisco, CA</div>
-              </div>
-            </div>
-          </div>
-          <div class="profile-section">
-            <div class="row">
-              <div class="col col-xl-8 m-auto col-lg-8 col-md-12">
-                <ul class="profile-menu">
-                  <li>
-                    <%= link_to "Timeline", "#" %>
-                  </li>
-                  <li>
-                    <%= link_to "About", "#" %>
-                  </li>
-                  <li>
-                    <%= link_to "Photos", "#" %>
-                  </li>
-                  <li>
-                    <%= link_to "Videos", "#" %>
-                  </li>
-                  <li>
-                    <%= link_to "Statistics", "#" %>
-                  </li>
-                  <li>
-                    <%= link_to "Events", "#" %>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="control-block-button">
-              <a href="#" class="btn btn-control bg-primary">
-                <svg class="olymp-star-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
-              </a>
-
-              <a href="#" class="btn btn-control bg-purple">
-                <svg class="olymp-chat---messages-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+<%= render "shared/group_header" %>
 
 <div class="container">
   <div class="row">
@@ -512,7 +452,7 @@
     <div class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12">
       <div class="ui-block">
         <div class="ui-block-title">
-          <h6 class="title">Page Intro</h6>
+          <h6 class="title"><%= I18n.t "about" %></h6>
           <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
         </div>
         <div class="ui-block-content">
@@ -521,27 +461,21 @@
 
           <ul class="widget w-personal-info item-block">
             <li>
-              <span class="text">We are Rock Band from Los Angeles, now based in San Francisco, come and listen to us play!</span>
+              <span class="title"><%= I18n.t "group_description" %>:</span>
+              <span class="text"><%= @group.description %></span>
             </li>
             <li>
-              <span class="title">Created:</span>
-              <span class="text">September 17th, 2013</span>
+              <span class="title"><%= I18n.t "your_email" %>:</span>
+              <span class="text"><%= @group.email %></span>
             </li>
             <li>
-              <span class="title">Based in:</span>
-              <span class="text">San Francisco, California</span>
+              <span class="title"><%= I18n.t "your_website" %>:</span>
+              <%= link_to @group.website, "http://#{@group.website}", 
+                target: "_blanks", class: "text" %>
             </li>
             <li>
-              <span class="title">Contact:</span>
-              <a href="#" class="text">greengoo_gigs@youmail.com</a>
-            </li>
-            <li>
-              <span class="title">Website:</span>
-              <a href="#" class="text">www.ggrock.com</a>
-            </li>
-            <li>
-              <span class="title">Favourites:</span>
-              <a href="#" class="text">5630 </a>
+              <span class="title"><%= I18n.t "members" %>:</span>
+              <a href="#" class="text">... </a>
             </li>
           </ul>
 
@@ -1381,14 +1315,6 @@
     </tbody>
   </table>
   </div>
-
-  <audio id="mediaplayer" data-showplaylist="true">
-    <source src="#" title="Track 1" data-poster="track1.png" type="audio/mpeg">
-    <source src="#" title="Track 2" data-poster="track2.png" type="audio/mpeg">
-    <source src="#" title="Track 3" data-poster="track3.png" type="audio/mpeg">
-    <source src="#" title="Track 4" data-poster="track4.png" type="audio/mpeg">
-  </audio>
-
 </div>
 
 <!-- ... end Playlist Popup -->

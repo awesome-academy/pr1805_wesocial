@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_20_134651) do
+ActiveRecord::Schema.define(version: 2019_05_25_145910) do
 
   create_table "chatroom_users", force: :cascade do |t|
     t.integer "user_id"
@@ -80,12 +80,19 @@ ActiveRecord::Schema.define(version: 2019_05_20_134651) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.string "description"
-    t.boolean "privacy"
-    t.boolean "blocked"
+    t.text "description"
+    t.boolean "privacy", default: false
+    t.boolean "blocked", default: false
     t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "website"
+    t.integer "phone"
+    t.text "address"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "instagram"
   end
 
   create_table "messages", force: :cascade do |t|
