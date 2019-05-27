@@ -1,12 +1,12 @@
 class User < ApplicationRecord
-  # :confirmable, :lockable, :timeoutable, :trackable, 
+  # :confirmable, :lockable, :timeoutable, :trackable,
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, 
-         :omniauthable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  has_many :friend_requester, class_name: Friendship.name, 
+  has_many :friend_requester, class_name: Friendship.name,
     foreign_key: "sender_id", dependent: :destroy
-  has_many :request_receiver, class_name: Friendship.name, 
+  has_many :request_receiver, class_name: Friendship.name,
     foreign_key: "receiver_id", dependent: :destroy
   has_many :requests, through: :friend_requester, source: :receiver
   has_many :friends, through: :request_receiver, source: :sender
@@ -17,4 +17,21 @@ class User < ApplicationRecord
   has_many :chatroom_users
   has_many :chatrooms, through: :chatroom_users
   has_many :messages
+
+  def self.new_with_session params, session
+    super.tap do |user|
+      if data = session["devise.facebook_data"] &&
+        session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
+
+  def self.from_omniauth auth
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+      user.name = auth.info.name
+    end
+  end
 end

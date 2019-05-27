@@ -52,6 +52,7 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
+
   config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
@@ -113,6 +114,11 @@ Devise.setup do |config|
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 11
 
+  #authen via facebook, gmail
+  # OMNIAUTH_KEY = YAML.load_file("#{Rails.root}/config/facebook.yml")
+  # # byebug
+  config.omniauth :google_oauth2, ENV["GOOGLE_OAUTH2_APP_ID"], ENV["GOOGLE_OAUTH2_APP_SECRET"], { scope: "email" }
+  config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"], { scope: "email" }
   # Set up a pepper to generate the hashed password.
   # config.pepper = 'f6d73d4fc5b14953a5f216a90f69ad870589da83297d212808ba4f2d8da1145ebbaa24f47baded1fd85d2915b83a9685ab25b096dbe44295d8f6880da39af5a9'
 
