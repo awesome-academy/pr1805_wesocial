@@ -11,6 +11,7 @@ gem "omniauth", "~> 1.9"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
 gem "figaro"
+gem "letter_opener", :group => :development
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"

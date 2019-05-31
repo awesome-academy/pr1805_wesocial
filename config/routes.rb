@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     devise_for :users, skip: :omniauth_callbacks , controllers: {
       sessions: "users/sessions",
       passwords: "users/passwords",
-      registrations: "users/registrations"
+      registrations: "users/registrations",
+      confirmables: "users/confirmables"
     }
   end
 
