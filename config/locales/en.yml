@@ -28,6 +28,14 @@ en:
   personal_info: Personal infomation
   account_setting: Account settings
   change_password: Change password
+  share_thought: Share what you are thinking here...
+  upload_photo: Upload Header Photo 
+  browse_computer: Browse Your Computer
+  post_status: Post Status
+  up_photo: Upload Your Photos
+  up_video: Upload Your Videos
+  post_suc: Your Post has been created!
+  post_del_suc: Post deleted!
 
   # ==============Group new==============
   your_group_dashboard: Group dashboard

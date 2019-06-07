@@ -48,8 +48,11 @@
 //= require ./lib/base-init
 //= require ./lib/fontawesome-all
 //= require ./lib/bootstrap.bundle
+
 //= require rails-ujs
 //= require activestorage
+//= require cloudinary
+
 //= require_tree .
 
 $(document).ready(function() {
@@ -58,3 +61,25 @@ $(document).ready(function() {
       $('.nav a').filter('a[href="#'+target[1]+'"]').tab('show');
   })
 })
+
+
+$(document).on("click", ".upload-photo-item", function() {
+	$("#user_post_file").trigger("click");
+});
+
+
+$(function() {
+  if($.fn.cloudinary_fileupload !== undefined) {
+    $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+  }
+});
+
+$('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
+  $('.preview').html(
+    $.cloudinary.image(data.result.public_id,
+      { format: data.result.format, version: data.result.version,
+        crop: 'fill', width: 150, height: 100 })
+  );
+  $('.image_public_id').val(data.result.public_id);
+  return true;
+});
