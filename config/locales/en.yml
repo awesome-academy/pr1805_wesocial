@@ -29,7 +29,7 @@ en:
   account_setting: Account settings
   change_password: Change password
   share_thought: Share what you are thinking here...
-  upload_photo: Upload Header Photo 
+  upload_photo: Upload Header Photo
   browse_computer: Browse Your Computer
   post_status: Post Status
   up_photo: Upload Your Photos
@@ -68,3 +68,12 @@ en:
   static_pages:
     home:
       status: Status
+# ============================ User =========================
+  your_friends : Your Friends
+  friends : Friends
+  friend : Friend
+  report_profile : Report Profile
+  block_profile : Block Profile
+  dashboard_greating : Welcome to your account dashboard! Here you’ll find everything you need to change your profile information, settings, read and, view your latest messages, change your pasword and much more! Also you can create or manage your own favourite page, have fun!
+  your_account_dashboard : Your Account Dashboard
+  accept_friend_request : Accept Friend Request

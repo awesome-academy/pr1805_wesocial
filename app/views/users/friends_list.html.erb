@@ -1,0 +1,48 @@
+<body class="page-has-left-panels page-has-right-panels">
+  <div class="header-spacer"></div>
+
+  <%= render "top_header_profile" %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="ui-block responsive-flex">
+          <div class="ui-block-title">
+            <div class="h6 title"><%= I18n.t("your_friends") %> (<%= count_friends @user %>)</div>
+            <form class="w-search">
+              <div class="form-group with-button">
+                <input class="form-control" type="text" placeholder=<%= I18n.t("find_friends") %>>
+                <button>
+                  <svg class="olymp-magnifying-glass-icon">
+                    <use xlink:href="svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <a href="#" class="more"><svg class="olymp-three-dots-icon">
+                <use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Friends -->
+  <div class="container">
+    <div class="row">
+      <%= render partial: "list", collection: @senders, as: :user %>
+      <%= render partial: "list", collection: @receivers, as: :user %>
+    </div>
+  </div>
+  <!-- ... end Friends -->
+  <!-- Window-popup Update Header Photo -->
+  <%= render "shared/update_header_photo" %>
+  <!-- ... end Window-popup Update Header Photo -->
+  <!-- Window-popup Choose from my Photo -->
+  <%= render "shared/choose_from_my_photo" %>
+  <!-- ... end Window-popup Choose from my Photo -->
+  <%= render "shared/back_to_top" %>
+  <!-- Window-popup-CHAT for responsive min-width: 768px -->
+  <%= render "shared/popup_chat" %>
+  <!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
+</body>

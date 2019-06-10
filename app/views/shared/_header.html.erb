@@ -142,7 +142,8 @@
               </li>
             </ul>
           </div>
-          <a href="#" class="view-all bg-blue"><%= I18n.t ".check_all_events" %></a>
+          <%= link_to I18n.t("check_all_events"), 
+            friends_user_path(current_user), class: "view-all bg-blue" %>
         </div>
       </div>
       <div class="control-icon more has-items">
@@ -438,14 +439,13 @@
             </div>
           </div>
         </div>
-        <a href="02-ProfilePage.html" class="author-name fn">
+        <%= link_to user_path(current_user), class: "author-name fn" do %>
           <div class="author-title">
             James Spiegel <svg class="olymp-dropdown-arrow-icon">
               <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use>
             </svg>
           </div>
-          <span class="author-subtitle">SPACE COWBOY</span>
-        </a>
+        <% end %>
       </div>
     </div>
   </div>
@@ -619,7 +619,8 @@
             </div>
           </li>
         </ul>
-        <a href="#" class="view-all bg-blue"><%= I18n.t "check_all_events" %></a>
+        <%= link_to I18n.t("check_all_events"), 
+          friends_user_path(current_user), class: "view-all bg-blue" %>
       </div>
     </div>
     <div class="tab-pane " id="chat" role="tabpanel">

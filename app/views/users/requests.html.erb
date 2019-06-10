@@ -1,0 +1,48 @@
+<div class="header-spacer header-spacer-small"></div>
+
+<!-- Main Header Account -->
+
+<div class="main-header">
+  <div class="content-bg-wrap bg-account"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+        <div class="main-header-content">
+          <h1>Your Account Dashboard</h1>
+          <p>Welcome to your account dashboard! Here you’ll find everything you need to change your profile
+  information, settings, read notifications and requests, view your latest messages, change your pasword and much
+  more! Also you can create or manage your own favourite page, have fun!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="img-bottom" src="img/account-bottom.png" alt="friends">
+</div>
+
+<!-- ... end Main Header Account -->
+
+<!-- Your Account Personal Information -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title">Your friend requests</h6>
+          <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+        </div>
+        <h1 align="center">Say oh yeah!</h1>
+        <ul>
+          <% @users.each do |user| %>
+            <li>user.name</li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <!-- Your Profile  -->
+    <%= render "shared/your_profile" %>
+    <!-- ... end Your Profile  -->
+  </div>
+</div>
+
+<!-- ... end Your Account Personal Information -->

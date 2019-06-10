@@ -1,0 +1,71 @@
+<body class="page-has-left-panels page-has-right-panels">
+  <div class="header-spacer header-spacer-small"></div>
+  <!-- Main Header Account -->
+  <div class="main-header">
+    <div class="content-bg-wrap bg-account"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+          <div class="main-header-content">
+            <h1><%= I18n.t("your_account_dashboard") %></h1>
+            <p><%= I18n.t("dashboard_greating") %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <img class="img-bottom" src="img/account-bottom.png" alt="friends"> -->
+  </div>
+  <!-- ... end Main Header Account -->
+  <!-- Your Account Personal Information -->
+  <div class="container">
+    <div class="row">
+      <div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+        <div class="ui-block">
+          <div class="ui-block-title">
+            <h6 class="title"><%= I18n.t("friend_requests") %></h6>
+          </div>
+          <!-- Notification List Frien Requests -->
+          <ul class="notification-list friend-requests">
+            <% current_user.friends.each do |user| %>
+              <% if current_user.request_receivers.find_by(sender_id: user).status == false %>
+                <li>
+                  <div class="author-thumb">
+                    <%= image_tag "avatar21-sm.jpg", alt: "author" %>
+                  </div>
+                  <div class="notification-event">
+                    <%= link_to user_path(user), class: "h6 notification-friend" do %>
+                    <%= user.name %>
+                    <% end %>
+                    <!-- <span class="chat-message-item">Mutual Friend: Sarah Hetfield</span> -->
+                  </div>
+                  <span class="notification-icon">
+                    <%= link_to friendship_path(user), method: :patch, class: "accept-request" do %>
+                    <span class="icon-add">
+                      <svg class="olymp-happy-face-icon">
+                        <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
+                      </svg>
+                    </span>
+                    <%= I18n.t("accept_friend_request") %>
+                    <% end %>
+                    <%= link_to "#", class: "accept-request request-del" do %>
+                    <span class="icon-minus">
+                      <svg class="olymp-happy-face-icon">
+                        <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
+                      </svg>
+                    </span>
+                    <% end %>
+                  </span>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <!-- ... end Notification List Frien Requests -->
+      <!-- Your Profile  -->
+      <%= render "shared/your_profile" %>
+      <!-- ... end Your Profile  -->
+    </div>
+  </div>
+  <!-- ... end Your Account Personal Information -->
+</body>
