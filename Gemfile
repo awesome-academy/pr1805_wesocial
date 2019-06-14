@@ -17,6 +17,11 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "carrierwave"
 gem "cloudinary"
+gem "link_thumbnailer"
+gem "rails_autolink", "~> 1.1", ">= 1.1.6"
+gem "grabbit"
+gem "acts_as_votable"
+
 
 
 

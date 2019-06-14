@@ -4,6 +4,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  acts_as_voter
   has_many :friend_requester, class_name: Friendship.name,
     foreign_key: "sender_id", dependent: :destroy
   has_many :request_receiver, class_name: Friendship.name,

@@ -36,6 +36,9 @@ en:
   up_video: Upload Your Videos
   post_suc: Your Post has been created!
   post_del_suc: Post deleted!
+  user_posts_show_like: "Liked:"
+  be_the_first_like: "Be the first who like this post"
+  liked: "Liked this post"
 
   # ==============Group new==============
   your_group_dashboard: Group dashboard
