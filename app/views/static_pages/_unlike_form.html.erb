@@ -1,0 +1,10 @@
+<%= link_to user_post_vote_path(post.id, ActsAsVotable::Vote.where(voter_id: current_user,votable_id: post.id).first.id), method: :delete, remote: true do %>
+  Unlike
+  <span class="glyphicon glyphicon-heart"></span>
+<% end %>
+<% if post.get_upvotes.size == 0 %>
+  <%= I18n.t"be_the_first_like" %>
+<% else %>
+  <%= I18n.t"user_posts_show_like" %> <%= post.get_upvotes.size %>
+  <%= raw post.votes_for.up.by_type(User).voters.map { |voter| link_to voter.name, user_path(voter) }.join(', ') %> <%= I18n.t"liked" %>
+<% end %>

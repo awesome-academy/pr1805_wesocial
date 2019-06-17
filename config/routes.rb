@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     root "static_pages#home"
     resources :users, only: [:show, :edit]
     resources :groups
-    resources :user_posts, only: [:create,:destroy]
+    resources :user_posts, only: [:create, :edit, :destroy] do
+      resources :votes, only: [:create, :destroy]
+    end
   end
 end

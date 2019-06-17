@@ -83,3 +83,12 @@ $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
   $('.image_public_id').val(data.result.public_id);
   return true;
 });
+
+$(document).ready(function() {
+  $('.add-comment').keypress(function(e){
+    if(e.which == 13){
+      $(this).closest('form').submit();
+    }
+  });
+});
+ 

@@ -36,6 +36,9 @@ vi:
   up_video: Đăng video của bạn
   post_suc: Bạn đã bài thành công!
   post_del_suc: Bài đăng đã được xóa!
+  user_posts_show_like: "Lượt thích:"
+  be_the_first_like: "Trở thành người đầu tiên thích bài viết này"
+  liked: "Đã thích bài viết này"
 
 
   # ==============Group new==============
