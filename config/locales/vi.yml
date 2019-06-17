@@ -39,6 +39,7 @@ vi:
   user_posts_show_like: "Lượt thích:"
   be_the_first_like: "Trở thành người đầu tiên thích bài viết này"
   liked: "Đã thích bài viết này"
+  post_compose: "Viết bình luận"
 
 
   # ==============Group new==============

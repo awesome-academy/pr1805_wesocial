@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :chatroom_users
   has_many :chatrooms, through: :chatroom_users
   has_many :messages
+  has_many :comments, through: :user_post, through: :group_user_posts
 
   def self.new_with_session params, session
     super.tap do |user|

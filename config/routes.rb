@@ -15,8 +15,10 @@ Rails.application.routes.draw do
     root "static_pages#home"
     resources :users, only: [:show, :edit]
     resources :groups
-    resources :user_posts, only: [:create, :edit, :destroy] do
+    resources :user_posts, only: [:create, :edit, :destroy, :update] do
       resources :votes, only: [:create, :destroy]
+      resources :comments, only: [:create, :destroy]
+      get 'user_posts/user_post_id/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
     end
   end
 end

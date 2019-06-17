@@ -1,4 +1,8 @@
 class Comment < ApplicationRecord
-  belongs_to :commentable, polymorphic: true
-  acts_as_votable cacheable_strategy: :update_columns
+	belongs_to :commentable, polymorphic: true
+  belongs_to :user
+  acts_as_votable 
+
+  validates :user, presence: :true
+  validates :content, presence: :true
 end
