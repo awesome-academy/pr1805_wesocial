@@ -240,7 +240,7 @@
 
               <%= p.content %><br>
 
-              <% if p.file.filename.split(".").last == ["mp4", "wmv", "avi", "flv", "gif"] %>
+              <% if p.file.try(:file_name) && p.file.filename.split(".").last == ["mp4", "wmv", "avi", "flv", "gif"] %>
                 <%= video_tag p.file_url %>
               <% else %>
                 <%= cl_image_tag p.file_url, width: 518, height: 380 %>
@@ -1059,7 +1059,6 @@
 
     </div>
   </div>
-
   <!-- Window-popup Update Header Photo -->
   <%= render "shared/update_header_photo" %>
   <!-- ... end Window-popup Update Header Photo -->

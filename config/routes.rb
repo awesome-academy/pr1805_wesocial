@@ -13,7 +13,12 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
-    resources :users, only: [:show, :edit]
+    resources :users, only: [:show, :edit] do
+      member do
+        get :requests, :friends, :friends_list
+      end
+    end
+    resources :friendships, only: [:create, :update, :destroy]
     resources :groups
     resources :user_posts, only: [:create, :edit, :destroy] do
       resources :votes, only: [:create, :destroy]

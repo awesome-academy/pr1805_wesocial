@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="ui-block">
+        <div class="top-header">
+          <div class="top-header-thumb">
+            <%= image_tag("top-header7.png", alt: "nature") %>
+          </div>
+          <div class="profile-section">
+            <div class="row">
+              <div class="col col-lg-5 col-md-5 col-sm-12 col-12">
+                <ul class="profile-menu">
+                  <li>
+                    <a href="02-ProfilePage.html" class="active"><%= I18n.t("timeline") %></a>
+                  </li>
+                  <li>
+                    <a href="05-ProfilePage-About.html"><%= I18n.t("about") %></a>
+                  </li>
+                  <li>
+                    <%= link_to I18n.t("friends"),
+                      friends_list_user_path(current_user) %>
+                  </li>
+                </ul>
+              </div>
+              <div class="col col-lg-5 ml-auto col-md-5 col-sm-12 col-12">
+                <ul class="profile-menu">
+                  <li>
+                    <a href="07-ProfilePage-Photos.html"><%= I18n.t("photos") %></a>
+                  </li>
+                  <li>
+                    <a href="09-ProfilePage-Videos.html"><%= I18n.t("videos") %></a>
+                  </li>
+                  <li>
+                    <div class="more">
+                      <svg class="olymp-three-dots-icon">
+                        <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+                      </svg>
+                      <ul class="more-dropdown more-with-triangle">
+                        <li>
+                          <%= link_to I18n.t("report_profile"), "#" %>
+                        </li>
+                        <li>
+                          <%= link_to I18n.t("block_profile"), "#" %>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="control-block-button">
+              <a href="#" class="btn btn-control bg-purple">
+                <svg class="olymp-chat---messages-icon">
+                  <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use>
+                </svg>
+              </a>
+              <%= render "relationship_button" %>
+            </div>
+          </div>
+          <div class="top-header-author">
+            <div class="author-thumb">
+              <%= image_tag("author-main1.jpg", alt: "author") %>
+            </div>
+            <div class="author-content">
+              <div class="h4 author-name">
+                <%= @user.name %>
+              </div>
+              <div class="country">San Francisco, CA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

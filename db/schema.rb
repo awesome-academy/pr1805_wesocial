@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_14_130226) do
+ActiveRecord::Schema.define(version: 2019_06_19_130442) do
 
   create_table "chatroom_users", force: :cascade do |t|
     t.integer "user_id"
@@ -105,15 +105,6 @@ ActiveRecord::Schema.define(version: 2019_06_14_130226) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "scrapes", force: :cascade do |t|
-    t.string "url"
-    t.string "title"
-    t.text "description"
-    t.text "images"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "user_posts", force: :cascade do |t|
     t.integer "user_id"
     t.text "content"
@@ -151,6 +142,7 @@ ActiveRecord::Schema.define(version: 2019_06_14_130226) do
     t.string "avatar"
     t.string "provider"
     t.string "uid"
+    t.string "cover"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

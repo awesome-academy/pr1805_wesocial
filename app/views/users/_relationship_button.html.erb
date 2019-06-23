@@ -1,0 +1,71 @@
+<% if current_user.id != params[:id].to_i %>
+  <% if relationship == nil && !@user.requesting?(current_user)%>
+    <div class="btn btn-control bg-blue more">
+      <svg class="olymp-happy-face-icon">
+        <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
+      </svg>
+      <ul class="more-dropdown more-with-triangle triangle-bottom-right", style="padding-left: 15px; padding-right: 15px; padding-bottom: 0px;">
+        <li>
+          <%= form_for(current_user.friend_requesters.build) do |f| %>
+            <div><%= hidden_field_tag :receiver_id, @user.id %></div>
+            <%= f.submit "Add Friend", class: "btn btn-blue" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  <% elsif relationship == nil && @user.requesting?(current_user) %>
+    <div class="btn btn-control bg-blue more">
+      <svg class="olymp-happy-face-icon">
+        <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
+      </svg>
+      <ul class="more-dropdown more-with-triangle triangle-bottom-right", style="padding-left: 15px; padding-right: 15px; padding-bottom: 0px;">
+        <li>
+          <%= link_to "Accept Friend Request", friendship_path(@user), method: :patch, class: "text-white btn btn-blue btn-sm", style: "padding-left: 18px;" %>
+        </li>
+      </ul>
+    </div>
+  <% else %>
+    <% if relationship.status == false %>
+      <div class="btn btn-control bg-yellow more">
+        <svg class="olymp-happy-face-icon">
+          <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
+        </svg>
+        <ul class="more-dropdown more-with-triangle triangle-bottom-right", style="padding-left: 15px; padding-right: 15px; padding-bottom: 0px;">
+          <li>
+            <%= form_for(current_user.friend_requesters.find_by(receiver_id: @user.id), html: { method: :delete }) do |f| %>
+              <%= f.submit "Cancel Request", class: "btn btn-danger btn-sm" %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    <% else %>
+      <div class="btn btn-control bg-green more">
+        <svg class="olymp-happy-face-icon">
+          <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
+        </svg>
+        <ul class="more-dropdown more-with-triangle triangle-bottom-right", style="padding-left: 15px; padding-right: 15px; padding-bottom: 0px;">
+          <li>
+            <a href="#">Unfriend</a>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <div class="btn btn-control bg-primary more">
+    <svg class="olymp-settings-icon">
+      <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-settings-icon"></use>
+    </svg>
+    <ul class="more-dropdown more-with-triangle triangle-bottom-right">
+      <li>
+        <a href="#" data-toggle="modal" data-target="#update-header-photo">Update Profile Photo</a>
+      </li>
+      <li>
+        <a href="#" data-toggle="modal" data-target="#update-header-photo">Update Header Photo</a>
+      </li>
+      <li>
+        <a href="29-YourAccount-AccountSettings.html">Account Settings</a>
+      </li>
+    </ul>
+  </div>
+<% end %>

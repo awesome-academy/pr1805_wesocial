@@ -29,10 +29,10 @@ vi:
   account_setting: Thiết lập tài khoản
   change_password: Thay đổi mật khẩu
   share_thought: Chia sẻ suy nghĩ của bạn ở đây...
-  upload_photo: Đăng ảnh bìa 
-  browse_photo: Tìm ảnh trong máy bạn 
+  upload_photo: Đăng ảnh bìa
+  browse_photo: Tìm ảnh trong máy bạn
   post_status: Đăng bài
-  up_photo: Đăng ảnh cả bạn 
+  up_photo: Đăng ảnh cả bạn
   up_video: Đăng video của bạn
   post_suc: Bạn đã bài thành công!
   post_del_suc: Bài đăng đã được xóa!
@@ -69,3 +69,12 @@ vi:
   static_pages:
     home:
       status: Trạng thái
+# ============================ User =========================
+  your_friends : Bạn bè
+  friends : Bạn bè
+  friend : Bạn bè
+  report_profile : Báo cáo sai phạm
+  block_profile : Khóa tài khoản
+  dashboard_greating : Xin chào ! Tại đây, bạn sẽ tìm thấy mọi thứ bạn cần để thay đổi hồ sơ và bạn có thể tạo hoặc quản lý trang yêu thích của riêng mình!
+  your_account_dashboard : Trang thiết lập
+  accept_friend_request : Đồng ý kết bạn
