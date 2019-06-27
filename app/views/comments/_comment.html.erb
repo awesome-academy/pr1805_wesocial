@@ -1,0 +1,32 @@
+<% post.comments.each do |c| %>
+	<div id="form-comment<%= post.id %>">
+	  <div class="row">
+	    <div class="col-md-1">
+	    	<% if comment.user.avatar.present? %>
+	      	<%= image_tag post.user.avatar_thumbnail_url, class: "h6 post__author-name fn" %>
+	      <% else %>
+	      	<%= image_tag("Anonymous-Avatar.png", alt: "no avatar", resize: "50x50", class: "h6 post__author-name fn")  %>
+				<% end %>
+				<%  %>
+	    </div>
+	    <div class="col-md-11">
+	      	<%= link_to c.user.name, user_path(comment.user_id) %>
+	      <span class="timestamp">
+	        <%= time_ago_in_words(comment.created_at) %> ago
+	      </span><br/>
+	      <p><%= comment.content %><p>
+	        <%= link_to I18n.t("Delete"), user_post_comment_path(post, c),
+	          method: :delete,
+	          data: {confirm: I18n.t("a_sure")} %>
+	    </div>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-11">
+	  	<%= render "shared/comment_fields", f: ff, type: ff.object.content %>
+	    <%#= render "shared/comment_form", post: post, parent_id: comment.id,
+	      comment_new: comment_new %>
+	  </div>
+	</div>
+<% end %>

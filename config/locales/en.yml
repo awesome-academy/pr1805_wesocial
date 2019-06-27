@@ -39,6 +39,9 @@ en:
   user_posts_show_like: "Liked:"
   be_the_first_like: "Be the first who like this post"
   liked: "Liked this post"
+  post_compose: "Write a comment"
+  del: "Delete"
+  a_sure: "Are you sure?"
 
   # ==============Group new==============
   your_group_dashboard: Group dashboard

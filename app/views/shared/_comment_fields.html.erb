@@ -1,0 +1,7 @@
+<fieldset>
+	<%= f.hidden_field :parent_id, value: 0 %>
+	<%= f.hidden_field :user_post_id, value: @user_post.id %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
+	<%= f.text_area :content, value: @comment.content, placeholder: I18n.t("post_compose"),
+			required: true, class: "form-control add-comment" %>
+</fieldset>
