@@ -117,7 +117,6 @@ Devise.setup do |config|
 
   #authen via facebook, gmail
   # OMNIAUTH_KEY = YAML.load_file("#{Rails.root}/config/facebook.yml")
-  # # byebug
   config.omniauth :google_oauth2, ENV["GOOGLE_OAUTH2_APP_ID"], ENV["GOOGLE_OAUTH2_APP_SECRET"], { scope: "email" }
   config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"], { scope: "email" }
   # Set up a pepper to generate the hashed password.

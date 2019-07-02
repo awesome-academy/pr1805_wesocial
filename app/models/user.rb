@@ -19,7 +19,10 @@ class User < ApplicationRecord
   has_many :chatrooms, through: :chatroom_users
   has_many :messages
   has_many :comments, through: :user_post, through: :group_user_posts
+  has_many :conversation_users
+  has_many :conversations, through: :conversation_users
 
+  # scope :friend_user -> (user){where user.fri}
   def self.new_with_session params, session
     super.tap do |user|
       if data = session["devise.facebook_data"] &&

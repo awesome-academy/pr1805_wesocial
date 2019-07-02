@@ -1,0 +1,41 @@
+<div class="chatboxhead">
+  <div class="chatboxtitle">
+    <%= "(" + @current_name + ")" +@receiver_name %>
+  </div>
+  <div class="chatboxoptions">
+    <%= link_to "#", class: "addMoreFriend", "data-cid" => @conversation.id do %>
+      <i class="fa fa-users" ></i>
+    <% end %>
+    <%= link_to "#", class: "toggleChatBox", "data-cid" => @conversation.id do %>
+      <i class='fa  fa-minus'></i>
+    <% end %>
+    <%= link_to "#", class: "closeChatBox", "data-cid" => @conversation.id do %>
+      <i class='fa  fa-times'></i>
+    <% end %>
+  </div>
+  <br/>
+</div>
+
+<div class="drop-container" style="display:none;"" >
+  <% if @conversation.users.count > 2 %>
+    <%= render "update_conversation" %>
+  <% else %>
+    <%= render "create_conversation" %>
+  <%end  %>
+</div>
+<div class="chatboxcontent">
+  <div class="chatboxmessage">
+    <ul class="media-list">
+      <% if @messages.any? %>
+        <%= render @messages %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="chatboxinput">
+  <%= form_for [@conversation, @message], remote: true, html: {id: "conversation_form_#{@conversation.id}"} do |f| %>
+    <%= f.text_area :content, class: "chatboxtextarea", "data-cid" => @conversation.id %>
+  <% end %>
+</div>
+<%= subscribe_to conversation_path(@conversation) %>
+<%= javascript_include_tag "dropdown1", defer: "defer" %>

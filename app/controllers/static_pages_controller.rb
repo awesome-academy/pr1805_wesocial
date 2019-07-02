@@ -1,12 +1,15 @@
 class StaticPagesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate_user!
-  before_action :load_user_post   
+  before_action :load_user_post
 
   def home
-    @user_post = UserPost.new 
+    @user_post = UserPost.new
+    @users = User.all
+    @conversations = Conversation.involving(current_user).order "created_at DESC"
+    @user_post = UserPost.new
     @user_posts = UserPost.order(created_at: :DESC)
-    @comment = Comment.new 
+    @comment = Comment.new
     @comments = Comment.order(created_at: :DESC)
   end
 
@@ -24,4 +27,4 @@ class StaticPagesController < ApplicationController
     @privacy_options = Privacy.pluck :privacy
   end
 end
-	
+
